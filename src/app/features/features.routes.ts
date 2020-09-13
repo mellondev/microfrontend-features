@@ -5,10 +5,6 @@ import { FeaturesBrowserComponent } from './features-browser/features-browser.co
 export const FEATURES_ROUTES: Routes = [
     {
       path: '',
-      redirectTo: 'features-browser'
-    },
-    {
-      path: 'features-browser',
       component: FeaturesBrowserComponent
     }
 ];

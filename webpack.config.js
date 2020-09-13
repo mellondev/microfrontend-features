@@ -12,7 +12,7 @@ const microfrontendConfig = {
   },
   devServer: {
     contentBase: path.join(__dirname, 'dist/microfrontend-features'),
-    port: 4200,
+    port: 5000,
   },
   module: {
     rules: [
@@ -42,11 +42,10 @@ const microfrontendConfig = {
   plugins: [
     new CleanWebpackPlugin(),
     new ModuleFederationPlugin({
-      name: "mfFeatures",
-      library: { type: "var", name: "mfFeatures" },
+      name: "features",
+      library: { type: "var", name: "features" },
       filename: "remoteEntry.js",
       exposes: {
-        Component: './src/app/features/features-browser/features-browser.component.ts',
         Module: './src/app/features/features.module.ts'
       },
       shared: ["@angular/core", "@angular/common", "@angular/router"]
