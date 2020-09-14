@@ -48,7 +48,7 @@ const microfrontendConfig = {
       exposes: {
         Module: './src/app/features/features.module.ts'
       },
-      shared: ["@angular/core", "@angular/common", "@angular/router"]
+      shared: ["@angular/core", "@angular/common", "@angular/router", '@angular/material/card', '@angular/material/button']
     }),
     new AotPlugin({
       skipCodeGeneration: false,
@@ -64,6 +64,7 @@ const microfrontendConfig = {
     }),
   ],
   output: {
+    publicPath: "http://localhost:5000/",
     filename: '[id].[name].js',
     path: __dirname + '/dist/microfrontend-features',
     chunkFilename: '[id].[chunkhash].js',
