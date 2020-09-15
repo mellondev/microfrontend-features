@@ -20,7 +20,12 @@ const microfrontendConfig = {
       {
         test: /\.(scss|sass)$/,
         use: [
-          { loader: 'style-loader' },
+          {
+            loader: 'style-loader',
+            options: {
+              insert: 'body',
+            },
+          },
           { loader: 'css-loader', options: { sourceMap: true } },
           { loader: 'sass-loader', options: { sourceMap: true } },
         ],
@@ -30,25 +35,31 @@ const microfrontendConfig = {
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',
-          context: path.resolve(__dirname, "src/"),
+          context: path.resolve(__dirname, 'src/'),
           outputPath: 'assets',
           publicPath: 'assets',
           useRelativePaths: true,
-          esModule: false
+          esModule: false,
+        },
       }
-      },
     ],
   },
   plugins: [
     new CleanWebpackPlugin(),
     new ModuleFederationPlugin({
-      name: "features",
-      library: { type: "var", name: "features" },
-      filename: "remoteEntry.js",
+      name: 'features',
+      library: { type: 'var', name: 'features' },
+      filename: 'remoteEntry.js',
       exposes: {
-        Module: './src/app/features/features.module.ts'
+        Module: './src/app/features/features.module.ts',
       },
-      shared: ["@angular/core", "@angular/common", "@angular/router", '@angular/material/card', '@angular/material/button']
+      shared: [
+        '@angular/core',
+        '@angular/common',
+        '@angular/router',
+        '@angular/material/card',
+        '@angular/material/button',
+      ],
     }),
     new AotPlugin({
       skipCodeGeneration: false,
@@ -64,7 +75,7 @@ const microfrontendConfig = {
     }),
   ],
   output: {
-    publicPath: "http://localhost:5000/",
+    publicPath: 'http://localhost:5000/',
     filename: '[id].[name].js',
     path: __dirname + '/dist/microfrontend-features',
     chunkFilename: '[id].[chunkhash].js',
