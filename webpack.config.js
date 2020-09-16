@@ -75,7 +75,7 @@ const microfrontendConfig = {
     }),
   ],
   output: {
-    publicPath: 'https://red-wave-053790403.azurestaticapps.net',
+    publicPath: 'https://red-wave-053790403.azurestaticapps.net/',
     filename: '[id].[name].js',
     path: __dirname + '/dist/microfrontend-features',
     chunkFilename: '[id].[chunkhash].js',
