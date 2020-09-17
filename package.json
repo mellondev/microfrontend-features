@@ -4,8 +4,7 @@
   "scripts": {
     "build": "webpack --config webpack.prod.js",
     "build:dev": "webpack --config webpack.dev.js",
-    "serve": "serve dist -l 5000 -s",
-    "start": "echo Make sure to build before calling start && npm run serve:dist"
+    "serve": "serve dist -l 5000 -s"
   },
   "private": true,
   "dependencies": {
