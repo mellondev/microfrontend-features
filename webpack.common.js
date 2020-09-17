@@ -5,14 +5,10 @@ const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPl
 const CopyPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-const microfrontendConfig = {
+module.exports = {
   entry: ['./src/polyfills.ts', './src/main.ts'],
   resolve: {
     mainFields: ['browser', 'module', 'main'],
-  },
-  devServer: {
-    contentBase: path.join(__dirname, 'dist/microfrontend-features'),
-    port: 5000,
   },
   module: {
     rules: [
@@ -41,7 +37,7 @@ const microfrontendConfig = {
           useRelativePaths: true,
           esModule: false,
         },
-      }
+      },
     ],
   },
   plugins: [
@@ -75,13 +71,7 @@ const microfrontendConfig = {
     }),
   ],
   output: {
-    publicPath: 'https://red-wave-053790403.azurestaticapps.net/',
-    filename: '[id].[name].js',
-    path: __dirname + '/dist/microfrontend-features',
-    chunkFilename: '[id].[chunkhash].js',
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'dist'),
   },
-  devtool: 'inline-source-map',
-  mode: 'development',
 };
-
-module.exports = [microfrontendConfig];
