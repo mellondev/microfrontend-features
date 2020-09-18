@@ -1,4 +1,3 @@
-const AotPlugin = require('@ngtools/webpack').AngularCompilerPlugin;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
@@ -6,7 +5,6 @@ const CopyPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-  entry: ['./src/polyfills.ts', './src/main.ts'],
   resolve: {
     mainFields: ['browser', 'module', 'main'],
   },
@@ -56,12 +54,6 @@ module.exports = {
         '@angular/material/card',
         '@angular/material/button',
       ],
-    }),
-    new AotPlugin({
-      skipCodeGeneration: false,
-      tsConfigPath: './tsconfig.app.json',
-      directTemplateLoading: true,
-      entryModule: path.resolve(__dirname, './src/app/app.module#AppModule'),
     }),
     new CopyPlugin({
       patterns: [{ from: 'src/assets', to: 'assets' }],
