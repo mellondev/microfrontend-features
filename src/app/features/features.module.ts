@@ -1,4 +1,5 @@
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -13,6 +14,7 @@ import './styles.scss';
   imports: [
     CommonModule,
     RouterModule.forChild(FEATURES_ROUTES),
+    HttpClientModule,
     MatCardModule,
     MatButtonModule
   ],
