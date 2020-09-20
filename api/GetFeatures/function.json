@@ -1,0 +1,30 @@
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get"
+      ],
+      "route": "features"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "type": "cosmosDB",
+      "name": "features",
+      "databaseName": "microfrontends",
+      "collectionName": "features",
+      "connectionStringSetting": "COSMOSDB_microfrontends",
+      "partitionKey": "/name",
+      "direction": "in",
+      "sqlQuery": "select * from c"
+    }
+  ],
+  "scriptFile": "../dist/GetFeatures/index.js"
+}

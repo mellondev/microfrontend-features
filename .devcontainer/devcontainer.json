@@ -11,7 +11,8 @@
 		"angular.ng-template",
 		"johnpapa.angular2",
 		"esbenp.prettier-vscode",
-		"hookyqr.beautify"
+		"hookyqr.beautify",
+		"ms-azuretools.vscode-azurefunctions"
 	],
 
 	"remoteUser": "node"
