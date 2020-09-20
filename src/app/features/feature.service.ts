@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Feature } from './feature.model';
 
 @Injectable({
@@ -10,6 +11,6 @@ export class FeatureService {
   constructor(private httpClient: HttpClient) {}
 
   getFeatures(): Observable<Feature[]> {
-    return this.httpClient.get<Feature[]>('api/features');
+    return this.httpClient.get<Feature[]>(environment.apiBaseUrl + 'features');
   }
 }
