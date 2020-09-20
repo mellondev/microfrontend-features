@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiBaseUrl: 'http://localhost:7071/api/'
+  apiBaseUrl: 'https://red-wave-053790403.azurestaticapps.net/api/'
 };
 
 /*
