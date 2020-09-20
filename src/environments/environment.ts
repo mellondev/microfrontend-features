@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiBaseUrl: 'https://red-wave-053790403.azurestaticapps.net/api/'
+  apiBaseUrl: 'https://md-microfrontends.azurewebsites.net/api/'
 };
 
 /*
