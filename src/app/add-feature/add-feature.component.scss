@@ -1,0 +1,17 @@
+.new-feature-container {
+  display: flex;
+  margin: 12px;
+}
+
+.add-feature-card {
+  flex: 30;
+  display: flex;
+  flex-direction: column;
+}
+
+.details-card {
+  flex: 70;
+  margin-left: 12px;
+  display: flex;
+  flex-direction: column;
+}

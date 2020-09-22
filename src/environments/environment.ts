@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiBaseUrl: 'https://md-microfrontends.azurewebsites.net/api/'
+  apiBaseUrl: 'http://localhost:7071/api/'
 };
 
 /*

@@ -1,0 +1,28 @@
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "post"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "type": "cosmosDB",
+      "name": "outputDocument",
+      "databaseName": "microfrontends",
+      "collectionName": "features",
+      "connectionStringSetting": "COSMOSDB_microfrontends",
+      "partitionKey": "/name",
+      "direction": "out"
+    }
+  ],
+  "scriptFile": "../dist/AddFeature/index.js"
+}

@@ -1,0 +1,35 @@
+<form [formGroup]="featureForm" (ngSubmit)="onSubmit()" autocomplete="off" class="new-feature-container">
+  <mat-card class="add-feature-card">
+    <mat-card-title>Add Feature</mat-card-title>
+
+    <mat-form-field>
+      <input matInput formControlName="name" placeholder="Name" required />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput formControlName="title" placeholder="Title" required />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput formControlName="remoteUrl" placeholder="Remote Url" required />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput formControlName="author" placeholder="Author" required />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput formControlName="version" placeholder="Version" />
+    </mat-form-field>
+
+    <button mat-flat-button color="primary" type="submit" [disabled]="!featureForm.valid">Submit</button>
+  </mat-card>
+
+  <mat-card class="details-card">
+    <mat-card-title>Details</mat-card-title>
+    <mat-form-field>
+      <textarea matInput formControlName="description" placeholder="Description" rows="20"
+        cdkTextareaAutosize></textarea>
+    </mat-form-field>
+  </mat-card>
+</form>

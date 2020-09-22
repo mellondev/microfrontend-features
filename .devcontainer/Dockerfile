@@ -7,3 +7,4 @@ ARG NGVERSION=9.1.12
 
 RUN sudo -u ${USERNAME} npm install -g npm
 RUN sudo -u ${USERNAME} npm install -g tslint typescript @angular/cli@${NGVERSION}
+RUN sudo -u ${USERNAME} npm install -g azure-functions-core-tools@3 --unsafe-perm true
