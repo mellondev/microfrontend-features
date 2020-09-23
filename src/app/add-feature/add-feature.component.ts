@@ -3,10 +3,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { environment } from '../../environments/environment';
 import Editor from '@toast-ui/editor';
+import { Router } from '@angular/router';
 
 import 'codemirror/lib/codemirror.css'; // Editor's Dependency Style
 import '@toast-ui/editor/dist/toastui-editor.css'; // Editor's Style
-import { Router } from '@angular/router';
 
 export interface ApiResponse {
   result: string;

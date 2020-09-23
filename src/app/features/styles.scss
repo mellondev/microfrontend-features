@@ -1,3 +1,5 @@
+@import './feature-detail/feature-detail.component.scss';
+
 /* You can add global styles to this file, and also import other style files */
 .default-margin {
   margin: 12px;
@@ -36,11 +38,8 @@
   overflow: auto;
 }
 
-.page-container {
-  width: 1024px;
-  display: flex;
-  flex-direction: column;
+.content-page-centered {
+  width: 1160px;
   margin-right: auto;
   margin-left: auto;
-  margin-top: 16px;
 }

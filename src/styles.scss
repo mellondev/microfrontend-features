@@ -22,10 +22,18 @@ body {
 }
 
 .toolbar {
-  display: flex;
-  align-items: center;
+  z-index: 2;
+  top: 0px;
+  position: fixed;
 
   button {
     margin-left: 12px;
   }
+}
+
+.page-container {
+  height: calc(100vh - 64px);
+  margin-top: 64px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }

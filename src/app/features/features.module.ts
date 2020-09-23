@@ -8,9 +8,10 @@ import { FeatureService } from './feature.service';
 import { FeaturesBrowserComponent } from './features-browser/features-browser.component';
 import { FEATURES_ROUTES } from './features.routes';
 import './styles.scss';
+import { FeatureDetailComponent } from './feature-detail/feature-detail.component';
 
 @NgModule({
-  declarations: [FeaturesBrowserComponent],
+  declarations: [FeaturesBrowserComponent, FeatureDetailComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(FEATURES_ROUTES),

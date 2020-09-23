@@ -1,4 +1,4 @@
-<div class="page-container">
+<div class="content-page-centered">
   <div class="mat-headline default-margin">Feature Browser</div>
   <div class="feature-container">
     <mat-card class="feature" *ngFor="let feature of features$ | async">
@@ -7,7 +7,7 @@
       <mat-card-content>{{ feature.description }}</mat-card-content>
       <mat-card-actions class="actions">
         <button mat-button color="primary">Add Feature</button>
-        <button mat-button>More info</button>
+        <button mat-button [routerLink]="['details', feature.name]">More info</button>
       </mat-card-actions>
     </mat-card>
   </div>
