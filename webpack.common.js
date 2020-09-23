@@ -25,6 +25,18 @@ module.exports = {
         ],
       },
       {
+        test: /\.css$/,
+        use: [
+          {
+            loader: 'style-loader',
+            options: {
+              insert: 'body',
+            },
+          },
+          { loader: 'css-loader', options: { sourceMap: true } },
+        ],
+      },
+      {
         test: /\.(png|jpe?g|gif)$/,
         loader: 'file-loader',
         options: {

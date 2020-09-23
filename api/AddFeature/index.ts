@@ -8,7 +8,7 @@ const httpTrigger: AzureFunction = async function(context: Context, req: HttpReq
   if (name && title && remoteUrl) {
     context.bindings.outputDocument = req.body;
     context.res = {
-      body: { result: 'sucess' },
+      body: { result: 'success' },
     };
   } else {
     context.res = {

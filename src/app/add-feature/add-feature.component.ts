@@ -2,6 +2,11 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { environment } from '../../environments/environment';
+import Editor from '@toast-ui/editor';
+
+import 'codemirror/lib/codemirror.css'; // Editor's Dependency Style
+import '@toast-ui/editor/dist/toastui-editor.css'; // Editor's Style
+import { Router } from '@angular/router';
 
 export interface ApiResponse {
   result: string;
@@ -25,17 +30,34 @@ export class AddFeatureComponent implements OnInit {
   editorOptions = { theme: 'vs-dark', language: 'javascript' };
   code = 'function x() {\nconsole.log("Hello world!");\n}';
 
-  constructor(private fb: FormBuilder, private httpClient: HttpClient) {}
+  editor: Editor;
 
-  ngOnInit() {}
+  constructor(private fb: FormBuilder, private httpClient: HttpClient, private router: Router) {}
+
+  ngOnInit() {
+    this.editor = new Editor({
+      el: document.querySelector('#editor'),
+      height: '100%',
+      initialEditType: 'wysiwyg',
+      previewStyle: 'vertical',
+      usageStatistics: false,
+    });
+  }
 
   onSubmit() {
     console.log('Form submit:');
     console.log(this.featureForm.value);
-    this.httpClient.post<ApiResponse>(environment.apiBaseUrl + 'addFeature', this.featureForm.value).subscribe(
+    const newFeature = {
+      ...this.featureForm.value,
+      description: this.editor.getMarkdown(),
+    };
+
+    console.log(newFeature);
+
+    this.httpClient.post<ApiResponse>(environment.apiBaseUrl + 'addFeature', newFeature).subscribe(
       x => {
         if (x.result === 'success') {
-          console.log('SAVED!!!');
+          this.router.navigate(['features']);
         } else {
           console.error('Error saving :(');
         }
