@@ -8,7 +8,7 @@ export const FEATURES_ROUTES: Routes = [
     component: FeaturesBrowserComponent,
   },
   {
-    path: 'details/:id',
+    path: 'details/:name',
     component: FeatureDetailComponent,
   },
 ];

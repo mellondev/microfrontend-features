@@ -28,12 +28,18 @@
   display: flex;
   flex-direction: column;
 
-  h1 {
+  .mat-display-1 {
+    margin: 0;
+  }
+
+  .mat-title {
     margin: 0;
   }
 
   p {
-    margin: 0;
+    margin: 6px 0px;
+    height: 40px;
+    text-overflow: ellipsis;
   }
 
   button {
@@ -45,6 +51,11 @@
 .feature-detail-header-icon {
   width: 128px;
   height: 128px;
+
+  img {
+    width: 128px;
+    height: 128px;
+  }
 }
 
 .feature-detail-content {

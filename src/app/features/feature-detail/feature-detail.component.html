@@ -1,17 +1,16 @@
-<div class="feature-detail-page">
+<div class="feature-detail-page" *ngIf="feature$ | async; let feature">
   <div class="feature-detail-header-background">
     <div class="feature-detail-header-content">
-      <div class="feature-detail-header-icon"><img src="https://ms-dotnettools.gallerycdn.vsassets.io/extensions/ms-dotnettools/csharp/1.23.2/1599094478016/Microsoft.VisualStudio.Services.Icons.Default" /></div>
+      <div class="feature-detail-header-icon"><img src="assets/flow-icon.png"/></div>
       <div class="feature-detail-header-description">
-        <h1>Feature Name</h1>
-        <p>Feature short description</p>
+        <div class="mat-display-1">{{ feature.title }}</div>
+        <div class="mat-title">{{ feature.author }}</div>
+        <p class="mat-body-1">Short description goes here for the feature, should only be 1-2 lines</p>
         <button mat-flat-button color="primary">Install</button>
       </div>
     </div>
   </div>
 
-  <div class="feature-detail-content">
-    <h3>Feature Title</h3>
-    <p>Welcome to the ultimate new feature that you need to install now!</p>
+  <div class="feature-detail-content" [innerHTML]="markdownHtml">
   </div>
 </div>
