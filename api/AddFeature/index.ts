@@ -10,11 +10,13 @@ const httpTrigger: AzureFunction = async function(context: Context, req: HttpReq
     context.res = {
       body: { result: 'success' },
     };
+    context.log('Add feature succeeded');
   } else {
     context.res = {
       status: 400,
       body: { result: 'Error, required fields must be complete' },
     };
+    context.log('Error adding features');
   }
 };
 
