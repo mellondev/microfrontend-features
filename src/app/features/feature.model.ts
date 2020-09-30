@@ -5,4 +5,6 @@ export interface Feature {
   remoteUrl: string;
   author: string;
   version: string;
+  exposedModule: string;
+  ngModule: string;
 }

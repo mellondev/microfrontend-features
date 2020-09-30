@@ -66,3 +66,24 @@
   padding-left: 10px;
   padding-right: 10px;
 }
+
+.feature-detail-properties {
+  display: flex;
+  flex-direction: column;
+  width: 1160px;
+  margin-top: 12px;
+}
+
+.feature-detail-property {
+  display: flex;
+}
+
+.feature-detail-property-label {
+  flex: 30;
+  color: black;
+}
+
+.feature-detail-property-value {
+  flex: 70;
+  color: dimgray;
+}

@@ -24,6 +24,8 @@ export class AddFeatureComponent implements OnInit {
     description: [''],
     remoteUrl: ['', Validators.required],
     author: ['', Validators.required],
+    ngModule: ['', Validators.required],
+    exposedModule: ['Module', Validators.required],
     version: [''],
   });
 

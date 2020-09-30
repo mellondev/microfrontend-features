@@ -3,7 +3,7 @@
     <mat-card-title>Add Feature</mat-card-title>
 
     <mat-form-field>
-      <input matInput formControlName="name" placeholder="Name" required />
+      <input matInput formControlName="name" placeholder="Remote Name" required />
     </mat-form-field>
 
     <mat-form-field>
@@ -11,12 +11,20 @@
     </mat-form-field>
 
     <mat-form-field>
+      <input matInput formControlName="author" placeholder="Author" required />
+    </mat-form-field>
+
+    <mat-form-field>
       <input matInput formControlName="remoteUrl" placeholder="Remote Url" required />
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput formControlName="author" placeholder="Author" required />
+      <input matInput formControlName="ngModule" placeholder="NG Module" required />
     </mat-form-field>
+    
+    <mat-form-field>
+      <input matInput formControlName="exposedModule" placeholder="Remote Module Name" required />
+    </mat-form-field>    
 
     <mat-form-field>
       <input matInput formControlName="version" placeholder="Version" />

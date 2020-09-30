@@ -1,16 +1,35 @@
 <div class="feature-detail-page" *ngIf="feature$ | async; let feature">
   <div class="feature-detail-header-background">
     <div class="feature-detail-header-content">
-      <div class="feature-detail-header-icon"><img src="https://ms.gallerycdn.vsassets.io/extensions/ms/vss-plans/18.175.0.1266795967/1600900011768/Microsoft.VisualStudio.Services.Icons.Default"/></div>
+      <div class="feature-detail-header-icon"><img
+          src="https://ms.gallerycdn.vsassets.io/extensions/ms/vss-plans/18.175.0.1266795967/1600900011768/Microsoft.VisualStudio.Services.Icons.Default" />
+      </div>
       <div class="feature-detail-header-description">
         <div class="mat-display-1">{{ feature.title }}</div>
         <div class="mat-title">{{ feature.author }}</div>
         <p class="mat-body-1">Short description goes here for the feature, should only be 1-2 lines</p>
-        <button mat-flat-button color="primary">Install</button>
+        <button mat-flat-button color="primary" (click)="installFeature(feature)">Install</button>
       </div>
+    </div>
+  </div>
+
+  <div class="feature-detail-properties">
+    <div class="feature-detail-property">
+      <div class="feature-detail-property-label">Remote Url</div>
+      <div class="feature-detail-property-value">{{ feature.remoteUrl }}</div>
+    </div>
+    <div class="feature-detail-property">
+      <div class="feature-detail-property-label">Exposed Module</div>
+      <div class="feature-detail-property-value">{{ feature.exposedModule }}</div>
+    </div>
+    <div class="feature-detail-property">
+      <div class="feature-detail-property-label">Ng Module</div>
+      <div class="feature-detail-property-value">{{ feature.ngModule }}</div>
     </div>
   </div>
 
   <div class="feature-detail-content" [innerHTML]="markdownHtml">
   </div>
+
+
 </div>

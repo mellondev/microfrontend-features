@@ -21,6 +21,7 @@
     "@toast-ui/editor": "^2.4.0",
     "@types/markdown-it": "^10.0.2",
     "markdown-it": "^11.0.1",
+    "md-shell-core": "0.0.2",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
